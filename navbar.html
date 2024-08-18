@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <style>
+    
+        .navbar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            max-width: 100%; /* ขยายเต็มหน้าจอ */
+            border-radius: 32px;
+            background-color: white;
+            display: flex;
+            justify-content: space-between;
+            box-shadow: 0 14px 28px #8f9cd4, 0 10px 10px #8f9cd4;
+        }
+
+        .navbar ul {
+            display: flex;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            width: 100%;
+            justify-content: space-around; /* จัดเรียงไอเท็ม */
+        }
+
+        .list-item {
+            list-style-type: none;
+            flex-basis: 100%;
+            min-height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            color: #555;
+            transform: translateY(0);
+            transition: transform 0.5s ease, opacity 0.2s ease;
+            cursor: pointer;
+        }
+
+        .list-item-name {
+            font-size: 13px;
+            font-weight: 500;
+            position: absolute;
+            transform: translate(0, 50px);
+            transition: transform 0.5s ease, opacity 0.2s ease;
+            opacity: 0;
+        }
+
+        .list-item:hover {
+            color: var(--highlight);
+            transform: translateY(-6px);
+        }
+
+        .list-item:hover .list-item-name {
+            transform: translateY(20px);
+            opacity: 1;
+        }
+
+        @media (max-width: 350px) {
+            .navbar {
+                flex-direction: column;
+                align-items: center;
+                padding-bottom: 20px;
+            }
+
+            .list-item {
+                flex-basis: auto;
+            }
+
+            .list-item:hover .list-item-name {
+                transform: translateY(25px);
+            }
+        }
+    </style>
+</head>
+<body>
+	<div>
+     test
+    </div>
+    <div class="navbar">
+        <ul>
+            <li class="list-item"><i class="fa-solid fa-house"></i>
+                <span class="list-item-name">Home</span>
+            </li>
+            <li class="list-item">
+                <i class="fa-solid fa-user"></i>
+                <span class="list-item-name">Profile</span>
+            </li>
+            <li class="list-item">
+                <i class="fa-solid fa-gear"></i>
+                <span class="list-item-name">Settings</span>
+            </li>
+            <li class="list-item">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span class="list-item-name">Bag</span>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
